@@ -1,0 +1,68 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <a routerLink="/" class="text-blue-600 font-medium hover:underline">&larr; Kembali</a>
+  <div class="my-4">
+    <h1 class="text-2xl font-bold text-gray-900">Crete User</h1>
+  </div>
+
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-[640px]">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="border-b border-gray-900/10 pb-12">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-gray-900">Name</label>
+          <input id="name" type="text" name="name" formControlName="name"
+            class="block w-full mt-2 rounded-md px-3 py-1.5 text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-500" />
+          @if (form.get('name')?.invalid && form.get('name')?.touched) {
+          <p class="mt-2 text-sm text-red-600">
+            Name must be filled.
+          </p>
+          }
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-900">Email address</label>
+          <input id="email" type="email" name="email" formControlName="email"
+            class="block w-full mt-2 rounded-md px-3 py-1.5 text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-500" />
+          @if (form.get('email')?.invalid && form.get('email')?.touched) {
+          <p class="mt-2 text-sm text-red-600">
+            Email
+          </p>
+          }
+        </div>
+
+        <div class="mb-4">
+          <label for="password" class="block text-sm font-medium text-gray-900">Password</label>
+          <input id="password" type="password" name="password" formControlName="password"
+            class="block w-full mt-2 rounded-md px-3 py-1.5 text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-500" />
+          @if (form.get('password')?.invalid && form.get('password')?.touched) {
+          <p class="mt-2 text-sm text-red-600">
+            Password must be filled.
+          </p>
+          }
+        </div>
+
+        <div>
+          <label for="confirmPassword" class="block text-sm font-medium text-gray-900">Confirmation Password</label>
+          <input id="confirmPassword" type="password" name="confirmPassword" formControlName="confirmPassword"
+            class="block w-full mt-2 rounded-md px-3 py-1.5 text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-500" />
+          @if (form.get('confirmPassword')?.invalid && form.get('confirmPassword')?.touched) {
+          <p class="mt-2 text-sm text-red-600">
+            Confirmation Password must be filled.
+          </p>
+          }
+        </div>
+
+      </div>
+
+
+
+      <div class="mt-6 flex items-center justify-end gap-x-4">
+        <a routerLink="/" type="button"
+          class="rounded-md px-4 py-2 text-sm font-semibold shadow-xs text-gray-900 hover:bg-gray-200">Cancel</a>
+        <button type="submit"
+          class="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Create</button>
+      </div>
+    </form>
+
+  </div>
+
+</div>
